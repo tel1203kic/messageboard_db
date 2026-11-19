@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101411">
+    <title>Open Message Board</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="/" aria-label="Open Message Board home">
+        <span class="wordmark-mark" aria-hidden="true">M</span>
+        <span>Open Message Board</span>
+      </a>
+      <span class="topbar-note">A place for everyone’s thoughts</span>
+    </header>
+
+    <main class="layout">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">CLASSROOM MESSAGE BOARD <span>—</span> 01</p>
+        <h1 id="page-title">Share a thought.<br>Start a conversation.</h1>
+        <p class="intro-copy">Have an idea or something to share?<br>Leave a message for the class.</p>
+        <div class="intro-stamp" aria-hidden="true">OPEN<br>BOARD</div>
+      </section>
+
+      <section class="compose" aria-labelledby="compose-title">
+        <div class="section-heading">
+          <span class="section-index">01 / WRITE</span>
+          <h2 id="compose-title">Write a message</h2>
+        </div>
+        <form id="post-form">
+          <label for="name">Your name <span>REQUIRED</span></label>
+          <input id="name" name="name" type="text" maxlength="80" autocomplete="name" placeholder="Name shown with your post" required>
+
+          <label for="message">Your message <span>REQUIRED</span></label>
+          <textarea id="message" name="message" maxlength="2000" rows="4" placeholder="What would you like to share?" required></textarea>
+
+          <div class="form-footer">
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+            <button type="submit"><span>Post message</span><span aria-hidden="true">↗</span></button>
+          </div>
+        </form>
+      </section>
+
+      <section class="feed" aria-labelledby="feed-title">
+        <div class="section-heading feed-heading">
+          <div>
+            <span class="section-index">02 / RECENT</span>
+            <h2 id="feed-title">Recent messages</h2>
+          </div>
+          <button id="refresh-button" class="refresh-button" type="button" aria-label="Refresh posts" title="Refresh posts">↻</button>
+        </div>
+        <p id="feed-status" class="feed-status" role="status" aria-live="polite">Loading posts...</p>
+        <ol id="post-list" class="post-list" aria-live="polite"></ol>
+      </section>
+    </main>
+
+    <footer class="footer"><span>OPEN MESSAGE BOARD</span><span>SHARE A THOUGHT</span></footer>
+  </body>
+</html>
